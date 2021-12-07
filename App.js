@@ -1,37 +1,38 @@
 import React from "react"
-import {
-  useColorMode,
-  useColorModeValue,
-  Center, Box, HStack,VStack, NativeBaseProvider, AspectRatio, Image, Text, Stack, MoreIcon, Heading,
-  FormControl, Input, Radio, Checkbox, Divider, Button, AddIcon
-} from "native-base"
-
-export function Example() {
-  const { colorMode, toggleColorMode } = useColorMode();
-
+import { Flex, Spacer, Center, NativeBaseProvider, Divider } from "native-base"
+export const Example = () => {
   return (
-    <Box alignItems="flex-end" p="8">
-      <VStack alignItems="flex-end" space="5">
-        <FormControl>
-          <FormControl.Label mb="3">What's your event called?</FormControl.Label>
-          <Input placeholder="Event's Name" />
-        </FormControl>
-        <FormControl>
-          <FormControl.Label mb="3">When is your Event?</FormControl.Label>
-          <Radio.Group nativeID="patani" name="day_night">
-            <VStack space="3">
-              <Radio value="day">Day</Radio>
-              <Radio value="night">Night</Radio>
-            </VStack>
-          </Radio.Group>
-        </FormControl>
-        <Divider />
-        <Checkbox size="sm" value="tnc" justifyContent="center" mb="4">
-          I agree to Terms and conditions
-        </Checkbox>
-      </VStack>
-      <Button mt="2" endIcon={<AddIcon size="3" />}>Create Event</Button>
-    </Box>
+    <Flex h={40} w={20} mt={6}>
+      <Center
+        size={16}
+        bg="primary.500"
+        _dark={{
+          bg: "primary.400",
+        }}
+        rounded="sm"
+        _text={{
+          color: "warmGray.50",
+          fontWeight: "medium",
+        }}
+      >
+        Box 1
+      </Center>
+      <Divider mt="2" mb="6" color="amber.900" />
+      <Center
+        size={16}
+        bg="secondary.500"
+        _dark={{
+          bg: "secondary.400",
+        }}
+        rounded="sm"
+        _text={{
+          color: "warmGray.50",
+          fontWeight: "medium",
+        }}
+      >
+        Box 2
+      </Center>
+    </Flex>
   )
 }
 

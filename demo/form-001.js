@@ -10,8 +10,8 @@ export function Example() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box alignItems="flex-end" p="8">
-      <VStack alignItems="flex-end" space="5">
+    <Box alignItems="flex-start" p="8">
+      <VStack alignItems="flex-start" space="5">
         <FormControl>
           <FormControl.Label mb="3">What's your event called?</FormControl.Label>
           <Input placeholder="Event's Name" />
@@ -19,7 +19,7 @@ export function Example() {
         <FormControl>
           <FormControl.Label mb="3">When is your Event?</FormControl.Label>
           <Radio.Group nativeID="patani" name="day_night">
-            <VStack space="3">
+            <VStack space="3" alignItems="flex-start">
               <Radio value="day">Day</Radio>
               <Radio value="night">Night</Radio>
             </VStack>
@@ -38,9 +38,7 @@ export function Example() {
 export default () => {
   return (
     <NativeBaseProvider>
-      <Center flex={1} px="3">
         <Example />
-      </Center>
     </NativeBaseProvider>
   )
 }
